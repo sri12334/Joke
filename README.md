@@ -20,7 +20,7 @@
 
 ## Screenshots
 
-![Example screenshot]()
+![Example screenshot](./assets/projectScreenshot.png)
 
 ## Technologies
 
@@ -35,9 +35,22 @@ clone the repo and start using the stop watch.
 
 ## Code Examples
 
-```js
+const getJoke = async () => {
+    try {
+        const res = await fetch('https://v2.jokeapi.dev/joke/Any');
+        if (res.ok) {
+            const data = await res.json();
+            return data;
+        } else {
+            throw new Error('failed to fetch joke');
+        }
+    } catch (err) {
+        console.error(err);
+    }
+};
 
-```
+export default getJoke;
+
 
 ## Features
 
@@ -54,7 +67,7 @@ To-do list:
 
 ## Status
 
-Project is: _in progress_
+Project is: done
 
 ## Inspiration
 
